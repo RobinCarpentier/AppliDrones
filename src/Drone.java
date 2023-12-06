@@ -251,6 +251,7 @@ public class Drone extends Point{
         if(directDeblock.isEmpty()){
             Random rand = new Random();
             Drone virtual = new Drone(x, y);
+            virtual.mega = this.mega;
             //Cas du drone au nord de l'intrus
             if(this.x==intrus.x && this.y<intrus.y && !(this.equalsG(arbre) && this.equalsD(arbre))){
                 int direct;

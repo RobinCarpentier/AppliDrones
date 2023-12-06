@@ -61,12 +61,12 @@ Une fenêtre permettant de paramétrer le jeu apparaîtra.
 - **Temps de repérage pour se faire capturer** : Représente le temps de repérage nécessaire en secondes pour que l'intrus se fasse capturer par les drones. C'est un entier positif non nul.
 #### Fenêtre de configuration de l'intrus
 ![Image 9](./Capture9.PNG)<br>
-Attention, il ne peut pas avoir la même position qu'un drone. L'une des deux positions doit être entre 1 et 3 inclus ou entre la longueur/largeur - 2 et la longueur/largeur inclus.
+Attention, il ne peut pas avoir la même position qu'un drone. L'une des deux positions doit être entre 1 et 3 inclus ou entre la longueur/largeur - 2 et la longueur/largeur inclus. Dans tous les cas, les abscisses doivent être entre 1 et longueur et les ordonnées entre 1 et largeur.
 - **Position X** : Représente la position sur l'axe X des abscisses de l'intrus. C'est un entier positif.
 - **Position Y** : Représente la position sur l'axe Y des ordonnées de l'intrus. C'est un entier positif.
 #### Fenêtre de configuration des drones
 ![Image 8](./Capture8.PNG)<br>
-Attention, ils ne peuvent pas avoir la même position qu'un autre drone. L'une des deux positions doit être entre 1 et 3 inclus ou entre la longueur/largeur - 2 et la longueur/largeur inclus.
+Attention, ils ne peuvent pas avoir la même position qu'un autre drone. L'une des deux positions doit être entre 1 et 3 inclus ou entre la longueur/largeur - 2 et la longueur/largeur inclus. Dans tous les cas, les abscisses doivent être entre 1 et longueur et les ordonnées entre 1 et largeur.
 - **Position X** : Représente la position sur l'axe X des abscisses des drones. C'est un entier positif.
 - **Position Y** : Représente la position sur l'axe Y des ordonnées des drones. C'est un entier positif.
 

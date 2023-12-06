@@ -78,6 +78,10 @@ public class AppliDrones extends Application {
     /**Scène principale */
     public Stage primaryStage;
     Pane root;
+    /**
+     * Constructeur par défaut de la classe
+     */
+    public AppliDrones(){}
     @Override
     /**
      * Méthode exécutée après le démarrage de l'application.
@@ -443,6 +447,12 @@ public class AppliDrones extends Application {
                     }
                     if(egal==0){
                         good++;
+                        if(dr2.x >= 0 && dr2.x <= n-1 && dr2.y >= 0 && dr2.y <= m-1) good++;
+                        if(good%2 != 0){
+                            System.out.println("Erreur : un drone n'est pas sur la map !");
+                            construireScenesPourDronesPartie2(primaryStage,n,m,d,nbs,nbd,nbZones,vitesseDrone,vitesseIntrus,perceptionDrone,perceptionIntrus,positionIntrus,positionDrone,tempsRepere);
+                            break;
+                        }
                         drone.add(dr2);
                         if(dr2.mega) {cercle = new Circle(dr2.x*10+5,dr2.y*10+5,7.5);cercle.setFill(Color.DARKRED);} // Définir la couleur de remplissage du cercle
                         else {cercle = new Circle(dr2.x*10+5,dr2.y*10+5,5);cercle.setFill(Color.RED);}
@@ -454,7 +464,7 @@ public class AppliDrones extends Application {
                         construireScenesPourDronesPartie2(primaryStage,n,m,d,nbs,nbd,nbZones,vitesseDrone,vitesseIntrus,perceptionDrone,perceptionIntrus,positionIntrus,positionDrone,tempsRepere);
                     }
                 }
-                if(good==nbd) construireScenesPourDronesPartie3(primaryStage,n,m,d,nbs,nbd,nbZones,vitesseDrone,vitesseIntrus,perceptionDrone,perceptionIntrus,positionIntrus,positionDrone,tempsRepere);
+                if(good==2*nbd) construireScenesPourDronesPartie3(primaryStage,n,m,d,nbs,nbd,nbZones,vitesseDrone,vitesseIntrus,perceptionDrone,perceptionIntrus,positionIntrus,positionDrone,tempsRepere);
             });
             vbox.getChildren().add(okButton);
             ScrollPane scroll = new ScrollPane(vbox);
@@ -542,7 +552,7 @@ public class AppliDrones extends Application {
                 }
                 if(egal==0){
                     good++;
-                    if((p3.x >= 0 && p3.x <= 2) || (p3.x <= n-1 && p3.x >= n-3) || (p3.y >= 0 && p3.y <= 2) || (p3.y <= m-1 && p3.y >= m-3)) good++;
+                    if((p3.x >= 0 && p3.x <= 2 && p3.y>=0 && p3.y<=m-1) || (p3.x <= n-1 && p3.x >= n-3 && p3.y>=0 && p3.y<=m-1) || (p3.x>=0 && p3.x <= n-1 && p3.y >= 0 && p3.y <= 2) || (p3.x>=0 && p3.x <= n-1 && p3.y <= m-1 && p3.y >= m-3)) good++;
                     intrus = p3;
                     cercle = new Circle(p3.x*10+5,p3.y*10+5,5);
                     cercle.setFill(Color.TURQUOISE); // Définir la couleur de remplissage du cercle
@@ -833,6 +843,7 @@ public class AppliDrones extends Application {
                                                 else {cercle = new Circle(a*10+5,b*10+5,5);cercle.setFill(Color.RED);}
                                                 cercle.toFront();
                                                 droneCercle.add(cercle);
+                                                javafx.application.Platform.runLater(() -> ajouterCercles(root,cercle));
                                             }
                                         }
                                         break;
@@ -919,6 +930,7 @@ public class AppliDrones extends Application {
                                                 else {cercle = new Circle(a*10+5,b*10+5,5);cercle.setFill(Color.RED);}
                                                 cercle.toFront();
                                                 droneCercle.add(cercle);
+                                                javafx.application.Platform.runLater(() -> ajouterCercles(root,cercle));
                                             }
                                         }
                                         break;
@@ -1005,6 +1017,7 @@ public class AppliDrones extends Application {
                                                 else {cercle = new Circle(a*10+5,b*10+5,5);cercle.setFill(Color.RED);}
                                                 cercle.toFront();
                                                 droneCercle.add(cercle);
+                                                javafx.application.Platform.runLater(() -> ajouterCercles(root,cercle));
                                             }
                                         }
                                         break;
@@ -1091,6 +1104,7 @@ public class AppliDrones extends Application {
                                                 else {cercle = new Circle(a*10+5,b*10+5,5);cercle.setFill(Color.RED);}
                                                 cercle.toFront();
                                                 droneCercle.add(cercle);
+                                                javafx.application.Platform.runLater(() -> ajouterCercles(root,cercle));
                                             }
                                         }
                                         break;
@@ -1247,6 +1261,7 @@ public class AppliDrones extends Application {
                                                 else {cercle = new Circle(a*10+5,b*10+5,5);cercle.setFill(Color.RED);}
                                                 cercle.toFront();
                                                 droneCercle.add(cercle);
+                                                javafx.application.Platform.runLater(() -> ajouterCercles(root,cercle));
                                             }
                                         }
                                         break;
@@ -1333,6 +1348,7 @@ public class AppliDrones extends Application {
                                                 else {cercle = new Circle(a*10+5,b*10+5,5);cercle.setFill(Color.RED);}
                                                 cercle.toFront();
                                                 droneCercle.add(cercle);
+                                                javafx.application.Platform.runLater(() -> ajouterCercles(root,cercle));
                                             }
                                         }
                                         break;
@@ -1419,6 +1435,7 @@ public class AppliDrones extends Application {
                                                 else {cercle = new Circle(a*10+5,b*10+5,5);cercle.setFill(Color.RED);}
                                                 cercle.toFront();
                                                 droneCercle.add(cercle);
+                                                javafx.application.Platform.runLater(() -> ajouterCercles(root,cercle));
                                             }
                                         }
                                         break;
@@ -1505,6 +1522,7 @@ public class AppliDrones extends Application {
                                                 else {cercle = new Circle(a*10+5,b*10+5,5);cercle.setFill(Color.RED);}
                                                 cercle.toFront();
                                                 droneCercle.add(cercle);
+                                                javafx.application.Platform.runLater(() -> ajouterCercles(root,cercle));
                                             }
                                         }
                                         break;
@@ -1987,6 +2005,17 @@ public class AppliDrones extends Application {
         if (t != null && t.isAlive()) {
             t.interrupt();
         }
+    }
+
+    /**
+     *   Méthode pour ajouter des cercles rouges à la fenêtre
+     * @param root : Contient tous les éléments graphiques (rectangle, cercles, ...)
+     * @param cercle : Le cercle qu'on ajoute
+     */
+    public void ajouterCercles(Pane root, Circle cercle) {
+        // Ajouter un cercle rouge à la position (50, 50) avec un rayon de 20
+        root.getChildren().add(cercle);
+        // Ajouter autant de cercles que nécessaire...
     }
     
     /**
