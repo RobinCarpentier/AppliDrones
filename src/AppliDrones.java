@@ -2008,14 +2008,12 @@ public class AppliDrones extends Application {
     }
 
     /**
-     *   Méthode pour ajouter des cercles rouges à la fenêtre
+     * Méthode pour ajouter des drones visuellement dans le jeu
      * @param root : Contient tous les éléments graphiques (rectangle, cercles, ...)
-     * @param cercle : Le cercle qu'on ajoute
+     * @param cercle : Le cercle qu'on veut ajouter visuellement dans le jeu
      */
     public void ajouterCercles(Pane root, Circle cercle) {
-        // Ajouter un cercle rouge à la position (50, 50) avec un rayon de 20
         root.getChildren().add(cercle);
-        // Ajouter autant de cercles que nécessaire...
     }
     
     /**
