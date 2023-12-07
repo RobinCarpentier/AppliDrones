@@ -23,29 +23,29 @@ Pour installer mon projet, il faut installer JavaFX en le téléchargeant : http
 
 ### Configuration des librairies de JavaFX
 Une fois l'extraction faite, ouvrez mon projet avec VSCode et dans la petite fenêtre à gauche, dans "JAVA PROJECTS", dans "Referenced Libraries", cliquez sur le + comme le montre ces images : <br>
-![Image 1](./Capture1.PNG)<br>
-![Image 2](./Capture2.PNG)<br>
+![Image 1](images/Capture1.PNG)<br>
+![Image 2](images/Capture2.PNG)<br>
 Puis ajoutez tous les fichiers dans le dossier lib du dossier JavaFX que vous avez extrait.
 
 Ensuite, allez dans launch.json (il se trouve dans le dossier ".vscode") et remplacez tous les "C:/Users/B/Downloads/javafx-sdk-21.0.1/lib" (il se trouve dans les vmArgs) par le chemin absolu du dossier lib du dossier JavaFX que vous avez extrait. Voici deux captures d'écran pour vous aider : <br>
-![Image 3](./Capture3.PNG)<br>
-![Image 4](./Capture4.PNG)<br>
+![Image 3](images/Capture3.PNG)<br>
+![Image 4](images/Capture4.PNG)<br>
 
 ### Téléchargement de l'extension pack pour Java
 Avant, veuillez installer l'extension "Extension Pack for Java" (faites une recherche sur l'onglet "Extensions" pour le trouver) : <br>
-![Image 5](./Capture5.PNG)
+![Image 5](images/Capture5.PNG)
 
 
 ## Utilisation
 
 ### Démarrage du jeu
 Pour utiliser l'application, allez sur AppliDrones.java et cliquez sur "Run" qui apparaît au dessus du main se trouvant en bas du code :<br>
-![Image 6](./Capture6.PNG)<br>
+![Image 6](images/Capture6.PNG)<br>
 Une fenêtre permettant de paramétrer le jeu apparaîtra.
 
 ### Explication des paramètres du jeu
 #### Fenêtre principale
-![Image 7](./Capture7.PNG)
+![Image 7](images/Capture7.PNG)
 - **Longueur** : Représente la longueur de la map. Elle ne peut pas être inférieure à 5. C'est un entier.
 - **Largeur** : Représente la largeur de la map. Elle ne peut pas être inférieure à 5. C'est un entier.
 - **Densité** : Réprésente la densité des arbres sur la map en pourcentage. Elle doit être inférieure ou égale à 95%. C'est un entier positif.
@@ -60,12 +60,12 @@ Une fenêtre permettant de paramétrer le jeu apparaîtra.
 - **Zone de perception de l'intrus** : Représente la zone de perception de l'intrus pour pouvoir voir ce qui est caché dans l'obscurité sur la map (c'est-à-dire les arbres, les sorties et les zones). C'est un entier positif.
 - **Temps de repérage pour se faire capturer** : Représente le temps de repérage nécessaire en secondes pour que l'intrus se fasse capturer par les drones. C'est un entier positif non nul.
 #### Fenêtre de configuration de l'intrus
-![Image 9](./Capture9.PNG)<br>
+![Image 9](images/Capture9.PNG)<br>
 Attention, il ne peut pas avoir la même position qu'un drone. L'une des deux positions doit être entre 1 et 3 inclus ou entre la longueur/largeur - 2 et la longueur/largeur inclus. Dans tous les cas, les abscisses doivent être entre 1 et longueur et les ordonnées entre 1 et largeur.
 - **Position X** : Représente la position sur l'axe X des abscisses de l'intrus. C'est un entier positif.
 - **Position Y** : Représente la position sur l'axe Y des ordonnées de l'intrus. C'est un entier positif.
 #### Fenêtre de configuration des drones
-![Image 8](./Capture8.PNG)<br>
+![Image 8](images/Capture8.PNG)<br>
 Attention, ils ne peuvent pas avoir la même position qu'un autre drone. L'une des deux positions doit être entre 1 et 3 inclus ou entre la longueur/largeur - 2 et la longueur/largeur inclus. Dans tous les cas, les abscisses doivent être entre 1 et longueur et les ordonnées entre 1 et largeur.
 - **Position X** : Représente la position sur l'axe X des abscisses des drones. C'est un entier positif.
 - **Position Y** : Représente la position sur l'axe Y des ordonnées des drones. C'est un entier positif.
